@@ -37,8 +37,8 @@ public abstract class Pessoa {
         this.exp = exp;
     }
     // Metodos
-    protected void ganharExp(){
-        
+    protected void ganharExp(double n){
+        this.exp += n;
     }
     // Metodo toString()
     @Override
