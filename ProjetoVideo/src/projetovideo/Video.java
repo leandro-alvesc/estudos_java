@@ -2,12 +2,13 @@ package projetovideo;
 public class Video implements AcoesVideo {
     // Atributos 
     private String titulo;
-    private int avaliacao, views, curtidas;
+    private int views, curtidas;
+    private double avaliacao;
     private boolean reproduzindo;
     // Construtor
     public Video(String titulo) {
         this.titulo = titulo;
-        this.avaliacao = 1;
+        this.avaliacao = 0;
         this.views = 0;
         this.curtidas = 0;
         this.reproduzindo = false;
@@ -19,11 +20,13 @@ public class Video implements AcoesVideo {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-    public int getAvaliacao() {
+    public double getAvaliacao() {
         return avaliacao;
     }
-    public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
+    public void setAvaliacao(double avaliacao) {
+        double nova;
+        nova = (this.avaliacao + avaliacao)/this.views;
+        this.avaliacao = nova;
     }
     public int getViews() {
         return views;
